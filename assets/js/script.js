@@ -1,18 +1,29 @@
 // Assignment Code
-// DOM Elements
 
-// Randomized Generator Functions into Object for easy use
-// const randomized = {
-//     lower: randomLower,
-//     upper: randomUpper,
-//     number: randomNumber,
-//     symbol: randomSymbol,
-// }
+//Randomized Generator Functions into Object for easy use
+const randomized = {
+    lower: randomLower,
+    upper: randomUpper,
+    number: randomNumber,
+    symbol: randomSymbol,
+}
 
-// console.log(randomized.lower);
+// Promt for Password Length desired
+const passLength = prompt("Please enter desired password length as a number between a minimum of 8 and a maximum of 128.")
+
+if (passLength < 8 || passLength > 128) {
+    alert('Please enter a valid number between 8 and 128.');
+} else {
+    alert('Valid length entered: ' + passLength)
+};
+
+// Confirmation of whether or not to include lowercase, uppercase, number, &/or symbol characters
+
+
 
 // Click EventListener for Generate Button 
 var generateBtn = document.querySelector("#generate");
+
 generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
@@ -45,5 +56,3 @@ function randomSymbol() {
     const symbol = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     return symbol[Math.floor(Math.random() * symbol.length)];
 }
-
-// console.log(randomLower);
